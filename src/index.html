@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./assets/images/favicon.png" rel="icon" type="image/png" />
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/digits.css" />
+    <title>Studio Sol Challange</title>
+  </head>
+  <body>
+    <header class="what-number">
+      <h1 class="title">Qual é o número?</h1>
+    </header>
+
+    <section class="content">
+      <div class="tip"></div>
+      <div class="digits">
+        <div class="digit-1 zero">
+          <span class="d1"></span>
+          <span class="d2"></span>
+          <span class="d3"></span>
+          <span class="d4"></span>
+          <span class="d5"></span>
+          <span class="d6"></span>
+          <span class="d7"></span>
+        </div>
+
+        <div class="digit-2 correct" style="display: none">
+          <span class="d1"></span>
+          <span class="d2"></span>
+          <span class="d3"></span>
+          <span class="d4"></span>
+          <span class="d5"></span>
+          <span class="d6"></span>
+          <span class="d7"></span>
+        </div>
+
+        <div class="digit-3" style="display: none">
+          <span class="d1"></span>
+          <span class="d2"></span>
+          <span class="d3"></span>
+          <span class="d4"></span>
+          <span class="d5"></span>
+          <span class="d6"></span>
+          <span class="d7"></span>
+        </div>
+      </div>
+
+      <button class="btn-new-game" onclick="newGame()">
+        <img
+          src="./assets/images/refresh.png"
+          alt="refresh game"
+          class="refresh-icon"
+        />
+        Nova partida
+      </button>
+    </section>
+
+    <footer class="controls">
+      <input
+        type="number"
+        placeholder="Digite o palpite "
+        name="number"
+        id="number"
+        class="selected-number"
+      />
+      <input
+        type="submit"
+        value="Enviar"
+        class="send"
+        onclick="verifyAnswer()"
+      />
+      <div class="invalid-value-input"></div>
+      <!-- Acertar sempre o valor sorteado, exceto quando a API retorna erro 502 -->
+      <div class="cheat-container">
+        <p class="cheat-message">Cheat</p>
+        <input type="checkbox" id="cheat" /><label for="cheat">Toggle</label>
+      </div>
+    </footer>
+  </body>
+  <script src="./scripts/main.js"></script>
+</html>

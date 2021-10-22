@@ -1,0 +1,266 @@
+/* Font Montserrat e Roboto */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:ital,wght@0,500;1,700&display=swap");
+
+/* Cores a serem utilizadas */
+:root {
+  --main-gradient: linear-gradient(180deg, #eeeeee 0%, #ffffff 100%);
+  --orange-gradient: linear-gradient(174.92deg, #ef6c00 18.47%, #db6300 36.57%);
+  --gray-gradient: linear-gradient(180deg, #434854 0%, #9e9e9e 100%);
+  --green-correct: #32bf00;
+  --red-error: #cc3300;
+  --white: #ffffff;
+  --gray-details: #cfcfcf;
+  --gray-font: #9e9e9e;
+  --gray-font-off: #dddddd;
+  --black-font-active: #262a34;
+  --black-input-font: #222222;
+
+  --orange-warning: #ff6600;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: var(--main-gradient);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.what-number {
+  position: absolute;
+  top: 2.75rem;
+}
+
+.title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 2.75rem;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+
+  background: var(--orange-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  position: relative;
+}
+
+.title::after {
+  content: "";
+  display: block;
+  width: 80%;
+  height: 1px;
+  background: var(--gray-details);
+  margin: 8px auto;
+}
+
+/* Main Content */
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tip {
+  font-family: "Montserrat", sans-serif;
+  color: var(--orange-warning);
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.22rem;
+  margin-right: 10px;
+  letter-spacing: -1px;
+}
+
+.correct {
+  color: var(--green-correct);
+}
+
+.error {
+  color: var(--red-error);
+}
+
+.digits {
+  margin: 0.875rem 0;
+}
+
+.btn-new-game {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 5px;
+  padding: 14px 10px;
+  background: var(--gray-gradient);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+
+  display: none;
+}
+
+.btn-new-game:hover {
+  filter: opacity(0.8);
+}
+
+.refresh-icon {
+  margin-right: 10px;
+}
+
+/* Controls */
+
+.controls {
+  position: absolute;
+  bottom: 2.75rem;
+}
+
+.selected-number {
+  border: 1px solid var(--gray-details);
+  border-radius: 5px;
+  padding: 12px 14px;
+  transition: 0.3s all;
+  max-width: 300px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  margin-right: 8px;
+  outline: 0;
+}
+
+.selected-number:focus,
+.selected-number:hover {
+  border: 1px solid var(--orange-warning);
+}
+
+.selected-number:disabled {
+  border: 1px solid var(--gray-details);
+  cursor: not-allowed;
+}
+
+.send {
+  border: none;
+  border-radius: 5px;
+  padding: 12px 14px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  background: var(--orange-gradient);
+  color: var(--white);
+
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  transition: 0.3s all;
+  cursor: pointer;
+}
+
+.send:hover {
+  filter: opacity(0.85);
+}
+
+.send:disabled,
+.send:hover:disabled {
+  background: var(--gray-font-off);
+  cursor: not-allowed;
+  filter: opacity(1);
+}
+/* Mensagem de erro para valores fora do intervalo */
+.invalid-value-input {
+  margin-top: 8px;
+  color: var(--red-error);
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+}
+
+/* Cheat */
+
+.cheat-container {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.cheat-message {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.125rem;
+}
+
+input[type="checkbox"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 40px;
+  height: 20px;
+  background: var(--gray-details);
+  display: block;
+  border-radius: 100px;
+  position: relative;
+}
+
+label:after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+
+input:checked + label {
+  background: var(--orange-warning);
+}
+
+input:checked + label:after {
+  left: calc(100% - 5px);
+  transform: translateX(-90%);
+}
+
+label:active:after {
+  width: 30px;
+}
+
+/* Media Queries */
+
+@media (max-width: 576px) {
+  .what-number {
+    top: 1.75rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .digits {
+    max-width: 250px;
+  }
+
+  .title::after {
+    width: 70%;
+    height: 1px;
+    margin: 2px auto;
+  }
+
+  .controls {
+    bottom: 1rem;
+  }
+}

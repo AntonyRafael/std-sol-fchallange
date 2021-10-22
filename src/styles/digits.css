@@ -1,0 +1,339 @@
+:root {
+  --digits-color: #262a34;
+  --gray-font-off: #dddddd;
+  --green-correct: #32bf00;
+  --red-error: #cc3300;
+  --d-width: 50px;
+  --d-hight: 10px;
+  --d-hight-half: 5px;
+  --extra-hight: -10px;
+  --gap: 5px;
+  --first-top: 12px;
+  --second-top: 84px;
+  --third-top: 136px;
+  --middle-top: 68px;
+  --d-left: -12px;
+  --d-right: 50px;
+}
+
+.digits :is(.d1, .d2, .d3, .d4, .d5, .d6, .d7):before,
+.digits :is(.d1, .d2, .d3, .d4, .d5, .d6, .d7):after {
+  content: " ";
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.digits {
+  display: flex;
+}
+
+.digits div {
+  position: relative;
+  width: 55px;
+  height: 160px;
+  display: inline-block;
+  margin: 0 0.8em;
+}
+
+.digits .d1 {
+  position: absolute;
+  display: block;
+  width: var(--d-width);
+  height: var(--d-hight);
+  background: var(--digits-color);
+}
+
+.digits .d1:before {
+  left: var(--extra-hight);
+  border-width: 0 var(--d-hight) var(--d-hight) 0;
+  border-color: transparent var(--digits-color) transparent transparent;
+}
+
+.digits .d1:after {
+  right: var(--extra-hight);
+  border-width: var(--d-hight) var(--d-hight) 0 0;
+  border-color: var(--digits-color) transparent transparent transparent;
+}
+
+.digits.correct .d1:before {
+  border-color: transparent var(--green-correct) transparent transparent;
+}
+
+.digits.correct .d1:after {
+  border-color: var(--green-correct) transparent transparent transparent;
+}
+
+.digits.error .d1:before {
+  border-color: transparent var(--red-error) transparent transparent;
+}
+
+.digits.error .d1:after {
+  border-color: var(--red-error) transparent transparent transparent;
+}
+
+.digits .d2 {
+  left: var(--d-left);
+  top: var(--first-top);
+  position: absolute;
+  display: block;
+  width: var(--d-hight);
+  height: var(--d-width);
+  background: var(--digits-color);
+}
+
+.digits .d2:before {
+  top: var(--extra-hight);
+  border-width: var(--d-hight) 0 0 var(--d-hight);
+  border-color: transparent transparent transparent var(--digits-color);
+}
+
+.digits .d2:after {
+  bottom: var(--extra-hight);
+  border-width: var(--d-hight) var(--d-hight) 0 0;
+  border-color: var(--digits-color) transparent transparent transparent;
+}
+
+.digits.correct .d2:before {
+  border-color: transparent transparent transparent var(--green-correct);
+}
+
+.digits.correct .d2:after {
+  border-color: var(--green-correct) transparent transparent transparent;
+}
+
+.digits.error .d2:before {
+  border-color: transparent transparent transparent var(--red-error);
+}
+
+.digits.error .d2:after {
+  border-color: var(--red-error) transparent transparent transparent;
+}
+
+.digits .d3 {
+  left: var(--d-right);
+  top: var(--first-top);
+  position: absolute;
+  display: block;
+  width: var(--d-hight);
+  height: var(--d-width);
+  background: var(--digits-color);
+}
+
+.digits .d3:before {
+  top: var(--extra-hight);
+  border-width: 0 0 var(--d-hight) var(--d-hight);
+  border-color: transparent transparent var(--digits-color) transparent;
+}
+
+.digits .d3:after {
+  bottom: var(--extra-hight);
+  border-width: 0 var(--d-hight) var(--d-hight) 0;
+  border-color: transparent var(--digits-color) transparent transparent;
+}
+
+.digits.correct .d3:before {
+  border-color: transparent transparent var(--green-correct) transparent;
+}
+
+.digits.correct .d3:after {
+  border-color: transparent var(--green-correct) transparent transparent;
+}
+
+.digits.error .d3:before {
+  border-color: transparent transparent var(--red-error) transparent;
+}
+
+.digits.error .d3:after {
+  border-color: transparent var(--red-error) transparent transparent;
+}
+
+.digits .d4 {
+  left: var(--d-left);
+  top: var(--second-top);
+  position: absolute;
+  display: block;
+  width: var(--d-hight);
+  height: var(--d-width);
+  background: var(--digits-color);
+}
+
+.digits .d4:before {
+  top: var(--extra-hight);
+  border-width: var(--d-hight) 0 0 var(--d-hight);
+  border-color: transparent transparent transparent var(--digits-color);
+}
+
+.digits .d4:after {
+  bottom: var(--extra-hight);
+  border-width: var(--d-hight) var(--d-hight) 0 0;
+  border-color: var(--digits-color) transparent transparent transparent;
+}
+
+.digits.correct .d4:before {
+  border-color: transparent transparent transparent var(--green-correct);
+}
+
+.digits.correct .d4:after {
+  border-color: var(--green-correct) transparent transparent transparent;
+}
+
+.digits.error .d4:before {
+  border-color: transparent transparent transparent var(--red-error);
+}
+
+.digits.error .d4:after {
+  border-color: var(--red-error) transparent transparent transparent;
+}
+
+.digits .d5 {
+  left: var(--d-right);
+  top: var(--second-top);
+  position: absolute;
+  display: block;
+  width: var(--d-hight);
+  height: var(--d-width);
+  background: var(--digits-color);
+}
+
+.digits .d5:before {
+  top: var(--extra-hight);
+  border-width: 0 0 var(--d-hight) var(--d-hight);
+  border-color: transparent transparent var(--digits-color) transparent;
+}
+
+.digits .d5:after {
+  bottom: var(--extra-hight);
+  border-width: 0 var(--d-hight) var(--d-hight) 0;
+  border-color: transparent var(--digits-color) transparent transparent;
+}
+
+.digits.correct .d5:before {
+  border-color: transparent transparent var(--green-correct) transparent;
+}
+
+.digits.correct .d5:after {
+  border-color: transparent var(--green-correct) transparent transparent;
+}
+
+.digits.error .d5:before {
+  border-color: transparent transparent var(--red-error) transparent;
+}
+
+.digits.error .d5:after {
+  border-color: transparent var(--red-error) transparent transparent;
+}
+
+.digits .d6 {
+  position: absolute;
+  display: block;
+  top: var(--middle-top);
+  width: var(--d-width);
+  height: var(--d-hight);
+  background: var(--digits-color);
+}
+
+.digits .d6:before {
+  left: var(--extra-hight);
+  border-width: var(--d-hight-half) var(--d-hight) var(--d-hight-half) 0;
+  border-color: transparent var(--digits-color) transparent transparent;
+}
+
+.digits .d6:after {
+  right: var(--extra-hight);
+  border-width: var(--d-hight-half) 0 var(--d-hight-half) var(--d-hight);
+  border-color: transparent transparent transparent var(--digits-color);
+}
+
+.digits.correct .d6:before {
+  border-color: transparent var(--green-correct) transparent transparent;
+}
+
+.digits.correct .d6:after {
+  border-color: transparent transparent transparent var(--green-correct);
+}
+
+.digits.error .d6:before {
+  border-color: transparent var(--red-error) transparent transparent;
+}
+
+.digits.error .d6:after {
+  border-color: transparent transparent transparent var(--red-error);
+}
+
+.digits .d7 {
+  position: absolute;
+  display: block;
+  top: var(--third-top);
+  width: var(--d-width);
+  height: var(--d-hight);
+  background: var(--digits-color);
+}
+
+.digits .d7:before {
+  left: var(--extra-hight);
+  border-width: 0 0 var(--d-hight) var(--d-hight);
+  border-color: transparent transparent var(--digits-color) transparent;
+}
+
+.digits .d7:after {
+  right: var(--extra-hight);
+  border-width: var(--d-hight) 0 0 var(--d-hight);
+  border-color: transparent transparent transparent var(--digits-color);
+}
+
+.digits.correct .d7:before {
+  border-color: transparent transparent var(--green-correct) transparent;
+}
+
+.digits.correct .d7:after {
+  border-color: transparent transparent transparent var(--green-correct);
+}
+
+.digits.error .d7:before {
+  border-color: transparent transparent var(--red-error) transparent;
+}
+
+.digits.error .d7:after {
+  border-color: transparent transparent transparent var(--red-error);
+}
+
+.digits div.zero :is(.d6),
+.digits div.one :is(.d1, .d2, .d4, .d6, .d7),
+.digits div.two :is(.d2, .d5),
+.digits div.three :is(.d2, .d4),
+.digits div.four :is(.d1, .d4, .d7),
+.digits div.five :is(.d3, .d4),
+.digits div.six :is(.d3),
+.digits div.seven :is(.d2, .d4, .d6, .d7),
+.digits div.nine :is(.d4) {
+  opacity: 0.05;
+}
+
+.digits.correct div.zero > *,
+.digits.correct div.one > *,
+.digits.correct div.two > *,
+.digits.correct div.three > *,
+.digits.correct div.four > *,
+.digits.correct div.five > *,
+.digits.correct div.six > *,
+.digits.correct div.seven > *,
+.digits.correct div.eight > *,
+.digits.correct div.nine > * {
+  background: var(--green-correct);
+}
+
+.digits.error div.zero > *,
+.digits.error div.one > *,
+.digits.error div.two > *,
+.digits.error div.three > *,
+.digits.error div.four > *,
+.digits.error div.five > *,
+.digits.error div.six > *,
+.digits.error div.seven > *,
+.digits.error div.eight > *,
+.digits.error div.nine > * {
+  background: var(--red-error);
+}
