@@ -18,7 +18,7 @@
     "serve": "^11.3.0"
   },
   "scripts": {
-    "start": "http-server -o src ",
+    "start": "http-server -o src -c-1",
     "test": "jest"
   }
 }

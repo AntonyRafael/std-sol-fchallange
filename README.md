@@ -6,12 +6,6 @@ Para os testes da aplicação, foi utilizado a biblioteca do [Jest](https://jest
 Para instalar as dependências do projeto basta rodar no terminal da aplicação o comando:
 
 ```
-npm install
-```
-
-ou caso utilize o yarn
-
-```
 yarn
 ```
 
@@ -24,12 +18,6 @@ Como as vezes é necessário muitas tentativas para advinhar o número vindo da 
 Para rodar a aplicação em sí basta rodar no terminal:
 
 ```
-npm run start
-```
-
-ou caso utilize o yarn
-
-```
 yarn start
 ```
 
@@ -38,11 +26,13 @@ yarn start
 Para rodar os testes da aplicação basta rodar no terminal:
 
 ```
-npm run test
-```
-
-ou caso utilize o yarn
-
-```
 yarn test
 ```
+
+###### Use preferencialmente o gerenciador de pacotes 'yarn' para este projeto, caso use o gerenciador de pacotes os comandos equivalentes aos do yarn são:
+
+###### yarn => npm install
+
+###### yarn start => npm run start
+
+###### yarn test => npm run test
