@@ -50,7 +50,16 @@ function isCheatActivated() {
   return cheatCheckbox.checked;
 }
 
-function numberToDrawn(element, number) {
+function resetNumbersOnScreen() {
+  firstDigit.classList = Array.from(firstDigit.classList)[0];
+  secondDigit.classList = Array.from(secondDigit.classList)[0];
+  thirdDigit.classList = Array.from(thirdDigit.classList)[0];
+  secondDigit.style.display = "none";
+  thirdDigit.style.display = "none";
+}
+
+function drawnNumberOnScreen(number) {
+  let [n1, n2, n3] = number.toString();
   const classToDrawn = [
     "zero",
     "one",
@@ -63,61 +72,17 @@ function numberToDrawn(element, number) {
     "eight",
     "nine",
   ];
-  switch (number) {
-    case "0":
-      element.classList.add(classToDrawn[0]);
-      break;
-    case "1":
-      element.classList.add(classToDrawn[1]);
-      break;
-    case "2":
-      element.classList.add(classToDrawn[2]);
-      break;
-    case "3":
-      element.classList.add(classToDrawn[3]);
-      break;
-    case "4":
-      element.classList.add(classToDrawn[4]);
-      break;
-    case "5":
-      element.classList.add(classToDrawn[5]);
-      break;
-    case "6":
-      element.classList.add(classToDrawn[6]);
-      break;
-    case "7":
-      element.classList.add(classToDrawn[7]);
-      break;
-    case "8":
-      element.classList.add(classToDrawn[8]);
-      break;
-    case "9":
-      element.classList.add(classToDrawn[9]);
-      break;
-  }
-}
-
-function resetNumbersOnScreen() {
-  firstDigit.classList = Array.from(firstDigit.classList)[0];
-  secondDigit.classList = Array.from(secondDigit.classList)[0];
-  thirdDigit.classList = Array.from(thirdDigit.classList)[0];
-  secondDigit.style.display = "none";
-  thirdDigit.style.display = "none";
-}
-
-function drawnNumberOnScreen(number) {
-  let [n1, n2, n3] = number.toString();
   resetNumbersOnScreen();
   if (n1) {
-    numberToDrawn(firstDigit, n1);
+    firstDigit.classList.add(classToDrawn[Number(n1)]);
   }
   if (n2) {
     secondDigit.style.display = "block";
-    numberToDrawn(secondDigit, n2);
+    secondDigit.classList.add(classToDrawn[Number(n2)]);
   }
   if (n3) {
     thirdDigit.style.display = "block";
-    numberToDrawn(thirdDigit, n3);
+    thirdDigit.classList.add(classToDrawn[Number(n3)]);
   }
 }
 
